@@ -1,5 +1,5 @@
 import session from "./session";
-
+import coffee from "./coffee"
 import {createStore, combineReducers, applyMiddleware, compose} from "redux"
 import thunk from "redux-thunk"
 
@@ -16,7 +16,8 @@ if (process.env.NODE_ENV === 'production') {
 
 const rootReducer = combineReducers({
     // users: usersReducer,
-    session
+    session,
+    coffee
 })
 
 const configureStore = (preloadedState ={})=> {
