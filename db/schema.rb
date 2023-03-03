@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_20_022516) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_03_231613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coffees", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "year", null: false
+    t.float "caffeine_content", null: false
+    t.float "caffeine_percentage", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "coffee_id", null: false
+    t.text "text", null: false
+    t.float "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_id"], name: "index_posts_on_coffee_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -26,4 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_20_022516) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "posts", "coffees"
 end
