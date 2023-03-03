@@ -1,0 +1,25 @@
+{
+  "name": "bench_bnb",
+  "version": "1.0.0",
+  "description": "Where should I sit?",
+  "engines": {
+    "node": "16.x"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+      "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcoshenrich/benchbnb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcoshenrich/benchbnb/issues"
+  },
+  "homepage": "https://github.com/Marcoshenrich/benchbnb#readme"
+}
