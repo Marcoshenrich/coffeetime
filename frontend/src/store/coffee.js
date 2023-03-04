@@ -18,7 +18,7 @@ const receiveCoffees = (coffees) => {
     };
 }
 
-const deleteCoffees = (coffeeId) => {
+const deleteCoffee = (coffeeId) => {
     return {
         type: REMOVE_COFFEE,
         coffeeId
@@ -26,7 +26,7 @@ const deleteCoffees = (coffeeId) => {
 }
 
 export const getCoffees = (store) => {
-    if (store.coffee) return Object.values(store.coffee)
+    if (store.coffees) return Object.values(store.coffees)
     return []
 }
 

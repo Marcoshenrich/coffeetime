@@ -1,4 +1,4 @@
-class Api::CoffeesController < ApplicationController
+class Api::PostsController < ApplicationController
    
     def ping
         return {'status': 'good'}

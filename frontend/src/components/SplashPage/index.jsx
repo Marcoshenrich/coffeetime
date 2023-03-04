@@ -4,20 +4,17 @@ import { fetchCoffees, getCoffees } from "../../store/coffee"
 import { GiCoffeeCup } from "react-icons/gi"
 import "./splash.css"
 import Post from "../Post"
-
+import { fetchPosts, getPosts } from "../../store/posts"
 
 const SplashPage = () => {
     const dispatch = useDispatch()
     const coffees = useSelector(getCoffees)
+    const posts = useSelector(getPosts)
     
-    const coffeeClicker = (e) => {
-        e.stopPropagation()
-
-        dispatch(fetchCoffees())
-    }
     
     useEffect(()=>{
         dispatch(fetchCoffees())
+        dispatch(fetchPosts())
     },[])
 
     const coffeePrinter = () => {
@@ -29,7 +26,14 @@ const SplashPage = () => {
                 </div>
             )
         })
+    }
 
+    const postsPrinter = () => {
+        console.log(posts)
+        return posts.map((post,i) => {
+            console.log("in posts")
+            return <Post post={post} coffee={coffees[post.coffeeId]} key={i}/>
+        })
     }
 
 
@@ -51,8 +55,7 @@ const SplashPage = () => {
                     </div>
                 </div>
                 <div id="posts-container">
-                    <Post/>
-                    <Post/>
+                    {postsPrinter()}
                 </div>
 
 
