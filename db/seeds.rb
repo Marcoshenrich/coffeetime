@@ -28,12 +28,21 @@ ApplicationRecord.transaction do
     }) 
   end
 
-    10.times do 
+  10.times do 
     Coffee.create!({
       name: Faker::Coffee.unique.blend_name,
       year: rand(1900...2023),
-      caffeine_content: rand(10...100),
+      caffeine_content: rand(32...64),
       caffeine_percentage: rand(1...10)
+    }) 
+  end
+
+  3.times do 
+    Post.create!({
+      coffee_id: rand(1...10),
+      title: Faker::Verb.base,
+      rating: rand(1...5),
+      text: Faker::Quote.yoda
     }) 
   end
 
