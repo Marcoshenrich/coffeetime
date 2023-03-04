@@ -1,0 +1,31 @@
+
+#post-container {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed darkgoldenrod;
+}
+
+#post-container div{
+    display: flex;
+    justify-content: center;
+}
+
+#post-title {
+    font-size: 30px;
+}
+
+
+#post-rating {
+    padding: 5px;
+}
+
+#post-text {
+    font-size: 20px;
+}
+
+#coffee-info {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+}

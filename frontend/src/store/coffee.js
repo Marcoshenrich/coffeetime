@@ -25,6 +25,11 @@ const deleteCoffees = (coffeeId) => {
     };
 }
 
+export const getCoffees = (store) => {
+    if (store.coffee) return Object.values(store.coffee)
+    return []
+}
+
 export const fetchCoffees = () => async dispatch => {
     const response = await csrfFetch(`/api/coffees/`)
     if (response.ok) {
