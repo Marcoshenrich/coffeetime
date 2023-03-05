@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: :create
+    get "coffees/ping", to: "coffees#ping", :as => "coffeesping"
     resources :coffees, only: [:show, :index, :create, :destroy]
-    get "/ping", to: "coffee#ping", :as => "coffeeping"
 
+    get "posts/ping", to: "posts#ping", :as => "postsping"
     resources :posts, only: [:show, :index, :create, :destroy]
-    get "/ping", to: "posts#ping", :as => "postsping"
 
     resource :session, only: [:show, :create, :destroy]
   end

@@ -24,14 +24,14 @@ const SplashPage = () => {
         setSortBy((sortBy) =>  !sortBy )
     }
 
-    // const fetchping = () => async dispatch => {
-    //     const response = await csrfFetch(`/api/posts/ping`)
-    //     if (response.ok) {
-    //         const data = await response.json();
-    //         console.log(data)
-    //     }
-    // };
-    // dispatch(fetchping())
+    const fetchping = () => async dispatch => {
+        const response = await csrfFetch(`/api/coffees/ping`)
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data)
+        }
+    };
+    dispatch(fetchping())
     
     useEffect(()=>{
         dispatch(fetchCoffees())
