@@ -13,7 +13,7 @@ const SplashPage = () => {
     const dispatch = useDispatch()
     const coffees = useSelector(getCoffees)
     const posts = useSelector(getPosts)
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
 
     
     
@@ -41,7 +41,6 @@ const SplashPage = () => {
     }
 
     const onModalClose = () => {
-        console.log("in on modalclose")
         setShowModal(false)
     }
 

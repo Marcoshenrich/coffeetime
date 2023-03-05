@@ -1,7 +1,8 @@
 class Api::PostsController < ApplicationController
-   
+       wrap_parameters include: Post.attribute_names + ['coffeeId']
+
     def ping
-        return {'status': 'good'}
+        # return {'status': 'good'}
     end
 
     def index
@@ -18,7 +19,7 @@ class Api::PostsController < ApplicationController
         @post = Post.new(post_params)
 
         if @post.save
-            render "api/post/show"
+            render "api/posts/show"
         else
             render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity 
         end
@@ -32,7 +33,7 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :rating, :text)
+        params.require(:post).permit(:title, :coffee_id, :rating, :text)
     end
 
 end

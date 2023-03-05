@@ -1,7 +1,7 @@
 class Api::CoffeesController < ApplicationController
    
     def ping
-        return {'status': 'good'}
+        # return {'status': 'good'}
     end
 
     def index
