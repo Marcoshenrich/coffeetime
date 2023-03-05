@@ -9,7 +9,7 @@ const NewPostModal = ({ coffees, onModalClose }) => {
     const [title, setTitle] = useState("")
     const [rating, setRating] = useState("")
     const [coffeeId, setCoffeeId] = useState(1)
-    const [text, setText] = useState("")
+    const [text, setText] = useState("Post Text")
 
 
     const optionsPrinter = () => {
@@ -27,10 +27,20 @@ const NewPostModal = ({ coffees, onModalClose }) => {
             coffeeId,
             text
         }
-        console.log(post)
-        dispatch(createPost(post))
-        onModalClose()
+      if (validPostChecker(post)) {
+          dispatch(createPost(post))
+          onModalClose()
+        } else {
+          setText("Sorry, make sure all fields are filled out and your rating is between 1 to 5.")
+        }
+
     }
+
+  const validPostChecker = (post) => {
+    if (!post.title || !post.rating || !post.text) return false
+    if (!post.rating.match(/^[1-5]$/)) return false
+    return true
+  }
 
 
   return (
@@ -47,7 +57,7 @@ const NewPostModal = ({ coffees, onModalClose }) => {
                     </select>
                 </div>
             </div>
-              <textarea id="npm-text" cols="30" rows="10" placeholder='Post Text' onChange={(e) => setText(e.target.value)}>
+              <textarea id="npm-text" cols="30" rows="10" placeholder={text} onChange={(e) => setText(e.target.value)}>
 
             </textarea>
         </div>
