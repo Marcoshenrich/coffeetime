@@ -1,16 +1,19 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchCoffees, getCoffees } from "../../store/coffee"
 import { GiCoffeeCup } from "react-icons/gi"
 import "./splash.css"
 import Post from "../Post"
 import { fetchPosts, getPosts } from "../../store/posts"
+import { FixedModal } from "../../context/Modal"
+
 
 const SplashPage = () => {
     const dispatch = useDispatch()
     const coffees = useSelector(getCoffees)
     const posts = useSelector(getPosts)
-    
+    const [showModal, setShowModal] = useState(false)
+
     
     
     useEffect(()=>{
@@ -30,16 +33,20 @@ const SplashPage = () => {
     }
 
     const postsPrinter = () => {
-        console.log(posts)
+
         return posts.map((post,i) => {
-            console.log("in posts")
             return <Post post={post} coffee={coffees[post.coffeeId]} key={i}/>
         })
     }
 
+    const onModalClose = () => {
+        console.log("in on modalclose")
+        setShowModal(false)
+    }
+
 
     return (
-        
+        <>
         <div id="body">
 
             <div id="posts-section">
@@ -74,6 +81,12 @@ const SplashPage = () => {
             </div>
 
         </div>
+        {showModal && (
+            <FixedModal onModalClose={onModalClose}>
+                <div>hello</div>
+            </FixedModal>
+            )}
+            </>
     )
 }
 
