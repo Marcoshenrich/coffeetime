@@ -22,7 +22,9 @@
 }
 
 #post-text {
+    display: flex;
     font-size: 20px;
+    text-align: center;
 }
 
 #coffee-info {

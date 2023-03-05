@@ -11,6 +11,7 @@ const NewCoffeeModal = ({ showCoffeeModal }) => {
     const [caffeine, setCaffeine] = useState("")
 
     const submitCoffee = () => {
+      if (!name || !year || !caffeine) return
         const coffee = {
             name,
             year,

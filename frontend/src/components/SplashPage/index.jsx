@@ -23,15 +23,6 @@ const SplashPage = () => {
     const switchSort = () => {
         setSortBy((sortBy) =>  !sortBy )
     }
-
-    const fetchping = () => async dispatch => {
-        const response = await csrfFetch(`/api/coffees/ping`)
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data)
-        }
-    };
-    dispatch(fetchping())
     
     useEffect(()=>{
         dispatch(fetchCoffees())
@@ -52,7 +43,7 @@ const SplashPage = () => {
     const postsPrinter = () => {
 
         return posts.map((post,i) => {
-            return <Post post={post} coffee={coffees[post.coffeeId]} key={i}/>
+            return <Post post={post} key={i}/>
         })
     }
 

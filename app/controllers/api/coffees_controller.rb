@@ -1,5 +1,5 @@
 class Api::CoffeesController < ApplicationController
-    wrap_parameters include: Post.attribute_names + ['caffeineContent']
+    wrap_parameters include: Post.attribute_names + ['caffeineContent', 'name', 'year']
 
     def ping
         render "api/ping"
