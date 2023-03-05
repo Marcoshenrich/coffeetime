@@ -38,6 +38,21 @@ export const fetchPosts = () => async dispatch => {
     }
 };
 
+export const createPost = (post) => async dispatch => {
+    const response = await csrfFetch(`/api/posts/`, {
+        method: "POST",
+        body: JSON.stringify(post),
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receivePost(data.post));
+    }
+}
+
 const postsReducer = (oldState = {}, action) => {
     const newState = { ...oldState }
     switch (action.type) {

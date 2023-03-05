@@ -6,13 +6,14 @@ import "./splash.css"
 import Post from "../Post"
 import { fetchPosts, getPosts } from "../../store/posts"
 import { FixedModal } from "../../context/Modal"
+import NewPostModal from "../NewPostModal/NewPostModal"
 
 
 const SplashPage = () => {
     const dispatch = useDispatch()
     const coffees = useSelector(getCoffees)
     const posts = useSelector(getPosts)
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(true)
 
     
     
@@ -45,6 +46,7 @@ const SplashPage = () => {
     }
 
 
+
     return (
         <>
         <div id="body">
@@ -53,7 +55,7 @@ const SplashPage = () => {
                 <div id="posts-navbar">
                     <div id="posts-navbar-left">
                         <div>Posts</div>
-                        <button>New Post</button>
+                            <button onClick={() => { setShowModal(true) }}>New Post</button>
                     </div>
                     <div id="posts-navbar-right">
                         <select name="" id="">
@@ -72,7 +74,7 @@ const SplashPage = () => {
             <div id="coffee-section">
                 <div id="coffee-nav">
                     <div>Coffees</div>
-                    <button>New Coffee</button>
+                    <button id="new-coffe-btn">New Coffee</button>
                 </div>
                 <div id="coffee-container">
                     {coffeePrinter()}
@@ -83,7 +85,7 @@ const SplashPage = () => {
         </div>
         {showModal && (
             <FixedModal onModalClose={onModalClose}>
-                <div>hello</div>
+                    <NewPostModal coffees={coffees} onModalClose={onModalClose} />
             </FixedModal>
             )}
             </>
