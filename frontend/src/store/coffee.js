@@ -18,7 +18,7 @@ const receiveCoffees = (coffees) => {
     };
 }
 
-const deleteCoffee = (coffeeId) => {
+const removeCoffee = (coffeeId) => {
     return {
         type: REMOVE_COFFEE,
         coffeeId
@@ -53,6 +53,15 @@ export const createCoffee = (coffee) => async dispatch => {
         dispatch(receiveCoffee(data.coffee));
     }
 }
+
+export const deleteCoffee = (coffeeId) => async dispatch => {
+    const response = await csrfFetch(`/api/coffees/${coffeeId}`, {
+        method: "DELETE"
+    })
+    if (response.ok) {
+        dispatch(removeCoffee(coffeeId));
+    }
+};
 
 const coffeesReducer = (oldState = {}, action) => {
     const newState = { ...oldState }

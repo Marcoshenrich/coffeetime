@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchCoffees, getCoffees } from "../../store/coffee"
-import { GiCoffeeCup } from "react-icons/gi"
 import "./splash.css"
 import Post from "../Post"
 import { fetchPosts, getPosts } from "../../store/posts"
@@ -9,6 +8,7 @@ import { FixedModal } from "../../context/Modal"
 import NewPostModal from "../NewPostModal/NewPostModal"
 import csrfFetch from "../../store/csrf"
 import NewCoffeeModal from "../NewCoffeeModal/NewCoffeeModal"
+import CoffeeTime from "../CoffeeTime/CoffeeTime"
 
 
 const SplashPage = () => {
@@ -31,12 +31,7 @@ const SplashPage = () => {
 
     const coffeePrinter = () => {
         return coffees.map((coffee, i)=>{
-            return (
-                <div id="coffeetime" key={i}>
-                    <GiCoffeeCup />
-                    <div id="coffeetime-info">{coffee.name} - {coffee.year}</div>
-                </div>
-            )
+            return <CoffeeTime key={i} coffee={coffee}/>
         })
     }
 
