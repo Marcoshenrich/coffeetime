@@ -12,6 +12,7 @@ const SplashPage = () => {
     const posts = useSelector(getPosts)
     
     
+    
     useEffect(()=>{
         dispatch(fetchCoffees())
         dispatch(fetchPosts())
