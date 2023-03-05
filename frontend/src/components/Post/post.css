@@ -5,9 +5,10 @@
     margin-bottom: 10px;
     border-bottom: 1px dashed darkgoldenrod;
         font-family: Helvetica, Arial, Sans-Serif;
+        
 }
 
-#post-container div{
+#post-container > div{
     display: flex;
     justify-content: center;
 }
@@ -31,4 +32,16 @@
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 3px;
+}
+
+#post-bottom {
+    display: flex;
+    justify-content: space-around !important;
+    align-items: flex-end;
+    width: 100%;
+}
+
+#post-delete {
+    padding: 5px;
+    cursor: pointer;
 }

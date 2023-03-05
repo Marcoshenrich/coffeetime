@@ -18,7 +18,7 @@ const receivePosts = (posts) => {
     };
 }
 
-const deletePost = (postId) => {
+const removePost = (postId) => {
     return {
         type: REMOVE_POST,
         postId
@@ -57,6 +57,15 @@ export const createPost = (post) => async dispatch => {
         dispatch(receivePost(data.post));
     }
 }
+
+export const deletePost= (postId) => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${postId}`, {
+        method: "DELETE"
+    })
+    if (response.ok) {
+        dispatch(removePost(postId));
+    }
+};
 
 const postsReducer = (oldState = {}, action) => {
     const newState = { ...oldState }

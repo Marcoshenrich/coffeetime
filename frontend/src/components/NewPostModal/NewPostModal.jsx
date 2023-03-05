@@ -8,7 +8,7 @@ const NewPostModal = ({ coffees, onModalClose }) => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState("")
     const [rating, setRating] = useState("")
-    const [coffeeId, setCoffeeId] = useState(1)
+  const [coffeeId, setCoffeeId] = useState(coffees[0].id)
     const [text, setText] = useState("Post Text")
 
 
