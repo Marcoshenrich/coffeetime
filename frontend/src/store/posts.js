@@ -25,9 +25,13 @@ const deletePost = (postId) => {
     };
 }
 
-export const getPosts = (store) => {
-    if (store.posts) return Object.values(store.posts)
-    return []
+export const getPosts = (sortBy) => (store) => {
+    if (!store.posts) return []
+    if (sortBy) {
+        return Object.values(store.posts)
+    } else {
+        return Object.values(store.posts).reverse()
+    }
 }
 
 export const fetchPosts = () => async dispatch => {

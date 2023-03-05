@@ -57,7 +57,7 @@ const NewPostModal = ({ coffees, onModalClose }) => {
                     </select>
                 </div>
             </div>
-              <textarea id="npm-text" cols="30" rows="10" placeholder={text} onChange={(e) => setText(e.target.value)}>
+              <textarea id="npm-text" cols="30" rows="10" placeholder={text} value={text} onChange={(e) => setText(e.target.value)}>
 
             </textarea>
         </div>

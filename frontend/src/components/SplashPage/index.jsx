@@ -7,15 +7,29 @@ import Post from "../Post"
 import { fetchPosts, getPosts } from "../../store/posts"
 import { FixedModal } from "../../context/Modal"
 import NewPostModal from "../NewPostModal/NewPostModal"
+import csrfFetch from "../../store/csrf"
 
 
 const SplashPage = () => {
+    const [sortBy, setSortBy] = useState(true)
     const dispatch = useDispatch()
     const coffees = useSelector(getCoffees)
-    const posts = useSelector(getPosts)
+    const posts = useSelector(getPosts(sortBy))
     const [showModal, setShowModal] = useState(false)
 
     
+    const switchSort = () => {
+        setSortBy((sortBy) =>  !sortBy )
+    }
+
+    // const fetchping = () => async dispatch => {
+    //     const response = await csrfFetch(`/api/posts/ping`)
+    //     if (response.ok) {
+    //         const data = await response.json();
+    //         console.log(data)
+    //     }
+    // };
+    // dispatch(fetchping())
     
     useEffect(()=>{
         dispatch(fetchCoffees())
@@ -57,14 +71,14 @@ const SplashPage = () => {
                             <button onClick={() => { setShowModal(true) }}>New Post</button>
                     </div>
                     <div id="posts-navbar-right">
-                        <select name="" id="">
+                            <select name="" id="" onChange={switchSort}>
                             <option value="">asc</option>
                             <option value="">desc</option>
                         </select>
                     </div>
                 </div>
                 <div id="posts-container">
-                    {postsPrinter()}
+                    {coffees.length > 0 && posts.length > 0 && (postsPrinter())}
                 </div>
 
 
@@ -76,7 +90,7 @@ const SplashPage = () => {
                     <button id="new-coffe-btn">New Coffee</button>
                 </div>
                 <div id="coffee-container">
-                    {coffeePrinter()}
+                    {coffees && (coffeePrinter())}
                 </div>
 
             </div>

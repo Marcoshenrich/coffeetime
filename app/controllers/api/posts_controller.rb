@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
        wrap_parameters include: Post.attribute_names + ['coffeeId']
 
     def ping
-        # return {'status': 'good'}
+        return {'status': 'good'}
     end
 
     def index
