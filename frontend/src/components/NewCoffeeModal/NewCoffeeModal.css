@@ -1,0 +1,41 @@
+
+#new-coffee-modal {
+    width: 150px;
+    height: 130px;
+    position: absolute;
+    top: 70px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#ncm-header {
+    font-size: 18px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    margin-bottom: 5px;
+}
+
+.ncm-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.ncm-tag {
+    font-size: 14px;
+}
+
+.ncm-input-box {
+    width: 50px;
+}
+
+#ncm-submit {
+    margin-top: 10px;
+    font-size: 12px;
+}

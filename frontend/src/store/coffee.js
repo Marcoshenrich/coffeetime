@@ -38,6 +38,22 @@ export const fetchCoffees = () => async dispatch => {
     }
 };
 
+export const createCoffee = (coffee) => async dispatch => {
+    const response = await csrfFetch(`/api/coffees/`, {
+        method: "POST",
+        body: JSON.stringify(coffee),
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+    if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        dispatch(receiveCoffee(data.coffee));
+    }
+}
+
 const coffeesReducer = (oldState = {}, action) => {
     const newState = { ...oldState }
     switch (action.type) {

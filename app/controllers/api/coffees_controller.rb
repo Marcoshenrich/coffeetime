@@ -1,5 +1,6 @@
 class Api::CoffeesController < ApplicationController
-   
+    wrap_parameters include: Post.attribute_names + ['caffeineContent']
+
     def ping
         return {'status': 'good'}
     end

@@ -8,6 +8,7 @@ import { fetchPosts, getPosts } from "../../store/posts"
 import { FixedModal } from "../../context/Modal"
 import NewPostModal from "../NewPostModal/NewPostModal"
 import csrfFetch from "../../store/csrf"
+import NewCoffeeModal from "../NewCoffeeModal/NewCoffeeModal"
 
 
 const SplashPage = () => {
@@ -16,6 +17,7 @@ const SplashPage = () => {
     const coffees = useSelector(getCoffees)
     const posts = useSelector(getPosts(sortBy))
     const [showModal, setShowModal] = useState(false)
+    const [showCoffeeModal, setShowCoffeeModal] = useState(false)
 
     
     const switchSort = () => {
@@ -37,9 +39,9 @@ const SplashPage = () => {
     },[])
 
     const coffeePrinter = () => {
-        return coffees.map((coffee)=>{
+        return coffees.map((coffee, i)=>{
             return (
-                <div id="coffeetime">
+                <div id="coffeetime" key={i}>
                     <GiCoffeeCup />
                     <div>{coffee.name} - {coffee.year}</div>
                 </div>
@@ -87,8 +89,9 @@ const SplashPage = () => {
             <div id="coffee-section">
                 <div id="coffee-nav">
                     <div>Coffees</div>
-                    <button id="new-coffe-btn">New Coffee</button>
+                        <button id="new-coffe-btn" onClick={() => { setShowCoffeeModal((showCoffeeModal) => !showCoffeeModal) }}>New Coffee</button>
                 </div>
+                    {showCoffeeModal && (<NewCoffeeModal showCoffeeModal={setShowCoffeeModal}/>)}
                 <div id="coffee-container">
                     {coffees && (coffeePrinter())}
                 </div>

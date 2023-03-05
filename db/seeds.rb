@@ -33,7 +33,6 @@ ApplicationRecord.transaction do
       name: Faker::Coffee.unique.blend_name,
       year: rand(1900...2023),
       caffeine_content: rand(32...64),
-      caffeine_percentage: rand(1...10)
     }) 
   end
 
