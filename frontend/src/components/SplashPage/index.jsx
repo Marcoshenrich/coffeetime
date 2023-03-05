@@ -34,7 +34,7 @@ const SplashPage = () => {
             return (
                 <div id="coffeetime" key={i}>
                     <GiCoffeeCup />
-                    <div>{coffee.name} - {coffee.year}</div>
+                    <div id="coffeetime-info">{coffee.name} - {coffee.year}</div>
                 </div>
             )
         })

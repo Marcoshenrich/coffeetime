@@ -89,6 +89,12 @@
 
 #coffeetime {
     display: flex;
+    margin: 10px;
+    border-bottom: 1px solid darkgoldenrod;
+}
+
+#coffeetime-info {
+    padding-left: 5px;
 }
 
 
