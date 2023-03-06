@@ -1,24 +1,8 @@
-# README
+To Replicate Solution Locally
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone Repo on your machine
+2. NPM install in frontend directory
+3. *$rails db:create* and *$rails db:seed* to initialize db. 
+4. *$rails s* at the root level to initialize server
+5. cd into frontend and *$npm run start* to initialize fronted
+6. Launch in localhost 300
