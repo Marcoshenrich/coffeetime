@@ -16,7 +16,7 @@ const SplashPage = () => {
     const coffees = useSelector(getCoffees)
     const posts = useSelector(getPosts(sortBy))
     const [showModal, setShowModal] = useState(false)
-    const [showCoffeeModal, setShowCoffeeModal] = useState(true)
+    const [showCoffeeModal, setShowCoffeeModal] = useState(false)
 
     
     const switchSort = () => {
