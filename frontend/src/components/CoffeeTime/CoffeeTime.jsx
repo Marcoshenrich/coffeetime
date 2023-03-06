@@ -19,7 +19,7 @@ const CoffeeTime = ({coffee}) => {
           onMouseLeave={() => setShowDelete(false)}>
             
           <div id="coffeetime-c">
-              <GiCoffeeCup />
+              <GiCoffeeCup id="coffee-time-icon"/>
               <div id="coffeetime-info">{coffee.name} - {coffee.year}</div>
           </div>
           {showDelete && (<div onClick={deleteCof} id="coffee-close">x</div>)}

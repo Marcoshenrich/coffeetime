@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    
 }
 
 #npm-header {
@@ -17,6 +18,11 @@
 #npm-title {
     width: 97%;
     padding: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 2px solid darkgoldenrod;
+    border-left: 3px solid darkslategrey;
+    border-top: 0px;
+    border-right: 0px;
 }
 
 #npm-inputs {
@@ -38,16 +44,31 @@
 #npm-rating {
     width: 40px;
     font-size: 12px;
+        border-top-left-radius: 5px;
+            border-bottom: 2px solid darkgoldenrod;
+            border-left: 3px solid darkslategrey;
+            border-top: 0px;
+            border-right: 0px;
 }
 
 #coffee-picker {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 }
 
 #coffee-picker > * {
     margin-left: 5px;
+    
+}
+
+#npm-select {
+    border-top-left-radius: 5px;
+    border-bottom: 2px solid goldenrod;
+    border-left: 1px solid darkslategrey;
+    border-top: 0px;
+    border-right: 0px;
 }
 
 #npm-text {
@@ -59,6 +80,27 @@
 #npm-submit {
     width: 97%;
     margin-top: 10px;
+    border-bottom: 2px solid goldenrod;
+    border-left: 2px solid goldenrod;
+    border-right: 2px solid darkgoldenrod;
+    border-top: 2px solid darkgoldenrod;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 3px;
+}
+
+#npm-submit:hover {
+    cursor: pointer;
+    border-bottom: 2px solid darkgoldenrod;
+    border-left: 2px solid darkgoldenrod;
+    border-right: 2px solid goldenrod;
+    border-top: 2px solid goldenrod;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 3px;
+    transition: border-bottom .5s, border-left .5s, border-right .5s, border-top .5s;
 }
 
 #npm-select {

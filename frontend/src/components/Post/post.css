@@ -4,7 +4,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border-bottom: 1px dashed darkgoldenrod;
-        font-family: Helvetica, Arial, Sans-Serif;
+    font-family: Helvetica, Arial, Sans-Serif;
         
 }
 
@@ -44,4 +44,24 @@
 #post-delete {
     padding: 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 6px;
+    width: 10px;
+    margin-bottom: 2px;
+
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 12px;
+    border-bottom: 2px solid goldenrod;
+    border-left: 2px solid goldenrod;
+    border-right: 2px solid darkgoldenrod;
+    border-top: 2px solid darkgoldenrod;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 3px;
+        
 }

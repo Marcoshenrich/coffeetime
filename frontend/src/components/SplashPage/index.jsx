@@ -16,7 +16,7 @@ const SplashPage = () => {
     const dispatch = useDispatch()
     const coffees = useSelector(getCoffees)
     const posts = useSelector(getPosts(sortBy))
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(true)
     const [showCoffeeModal, setShowCoffeeModal] = useState(false)
 
     
