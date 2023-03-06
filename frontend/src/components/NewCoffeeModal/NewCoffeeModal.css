@@ -3,7 +3,7 @@
     width: 150px;
     height: 130px;
     position: absolute;
-    top: 70px;
+    top: 80px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,14 @@
     align-items: center;
     border-radius: 5px;
     border: 1px solid black;
+    border-bottom: 3px solid goldenrod;
+    border-left: 3px solid goldenrod;
+    border-right: 3px solid darkgoldenrod;
+    border-top: 3px solid darkgoldenrod;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 3px;
 }
 
 #ncm-header {
@@ -38,4 +46,28 @@
 #ncm-submit {
     margin-top: 10px;
     font-size: 12px;
+}
+
+#ncm-submit {
+    border-bottom: 2px solid goldenrod;
+    border-left: 2px solid goldenrod;
+    border-right: 2px solid darkgoldenrod;
+    border-top: 2px solid darkgoldenrod;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 3px;
+}
+
+#ncm-submit:hover {
+    cursor: pointer;
+    border-bottom: 2px solid darkgoldenrod;
+    border-left: 2px solid darkgoldenrod;
+    border-right: 2px solid goldenrod;
+    border-top: 2px solid goldenrod;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 3px;
+    transition: border-bottom .5s, border-left .5s, border-right .5s, border-top .5s;
 }

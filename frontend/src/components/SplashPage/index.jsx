@@ -6,7 +6,6 @@ import Post from "../Post"
 import { fetchPosts, getPosts } from "../../store/posts"
 import { FixedModal } from "../../context/Modal"
 import NewPostModal from "../NewPostModal/NewPostModal"
-import csrfFetch from "../../store/csrf"
 import NewCoffeeModal from "../NewCoffeeModal/NewCoffeeModal"
 import CoffeeTime from "../CoffeeTime/CoffeeTime"
 
@@ -16,8 +15,8 @@ const SplashPage = () => {
     const dispatch = useDispatch()
     const coffees = useSelector(getCoffees)
     const posts = useSelector(getPosts(sortBy))
-    const [showModal, setShowModal] = useState(true)
-    const [showCoffeeModal, setShowCoffeeModal] = useState(false)
+    const [showModal, setShowModal] = useState(false)
+    const [showCoffeeModal, setShowCoffeeModal] = useState(true)
 
     
     const switchSort = () => {
@@ -77,7 +76,7 @@ const SplashPage = () => {
                     <div>Coffees</div>
                         <button id="new-coffe-btn" onClick={() => { setShowCoffeeModal((showCoffeeModal) => !showCoffeeModal) }}>New Coffee</button>
                 </div>
-                    {showCoffeeModal && (<NewCoffeeModal showCoffeeModal={setShowCoffeeModal}/>)}
+                 {showCoffeeModal && (<NewCoffeeModal showCoffeeModal={setShowCoffeeModal}/>)}
                 <div id="coffee-container">
                     {coffees && (coffeePrinter())}
                 </div>
