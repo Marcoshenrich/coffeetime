@@ -5,4 +5,4 @@ To Replicate Solution Locally
 3. **$rails db:create** and **$rails db:seed** to initialize db. 
 4. **$rails s** at the root level to initialize server
 5. cd into frontend and **$npm run start** to initialize fronted
-6. Launch in localhost 300
+6. Launch in localhost 3000
